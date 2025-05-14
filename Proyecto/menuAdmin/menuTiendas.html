@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../style2.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    <link rel="icon" href="../images/Logo.ico">
+    <title>Comercializadora Los Altos</title>
+</head>
+<body>
+    <nav>
+        <div class="logo-name">
+            <div class="logo-image">
+               <img src="../images/logo.png" alt="">
+            </div>
+            <span class="logo_name">Los Altos</span>
+        </div>
+        <div class="menu-items">
+            <ul class="nav-links">
+                <li><a href="menuCliente.html">
+                    <i class="uil uil-users-alt"></i>
+                    <span class="link-name">Clientes</span>
+                </a></li>
+                <li><a href="menuColocadora.html">
+                    <i class="uil uil-social-distancing"></i>
+                    <span class="link-name">Colocadora</span>
+                </a></li>
+                <li><a href="menuProducto.html">
+                    <i class="uil uil-shopping-cart"></i>
+                    <span class="link-name">Productos</span>
+                </a></li>
+                <li><a href="menuReportes.html">
+                    <i class="uil uil-chart"></i>
+                    <span class="link-name">Reportes</span>
+                </a></li>
+                <li><a href="menuTiendas.html">
+                    <i class="uil uil-shop"></i>
+                    <span class="link-name">Tiendas</span>
+                </a></li>
+                <li><a href="menuUsuarios.html">
+                    <i class="uil uil-setting"></i>
+                    <span class="link-name">Usuarios</span>
+                </a></li>
+            </ul>
+            
+            <ul class="logout-mode">
+                <li><a href="#" id="logoutButton">
+                    <i class="uil uil-signout"></i>
+                    <span class="link-name">Logout</span>
+                </a></li>
+                <li class="mode">
+            </li>
+            </ul>
+        </div>
+    </nav>
+    <section class="dashboard">
+        <div class="top">
+            <i class="uil uil-bars sidebar-toggle"></i>
+            <div class="search-box">
+                <i id="mostarUsuario">Administrador</i>
+            </div>
+        </div>
+        <div class="dash-content">
+            <div class="main">
+                <section class="mb-5">
+                   <h2 class="h4 mb-3">Ingreso de Nueva Tienda</h2>
+                   <form id="tiendaForm" class="row g-3">
+                       <div class="col-md-6">
+                           <label for="tiendaNom" class="form-label">Nombre de la tienda:</label>
+                           <input type="text" id="tiendaNom" class="form-control" required>
+                       </div>
+                       <div class="col-md-6">
+                           <label for="tiendaForm" class="form-label">Departamento:</label>
+                           <select id="tiendaSelectDept" class="form-select" required>
+                               <option selected></option>
+                               <option  value="1">Alta Verapaz</option>
+                               <option  value="2">Baja Verapaz</option>
+                               <option  value="3">Chimaltenango</option>
+                               <option  value="4">Chiquimula</option>
+                               <option  value="5">El Pprogreso</option>
+                               <option  value="6">Escuintla</option>
+                               <option  value="7">Guatemala</option>
+                               <option  value="8">Huehuetenango</option>
+                               <option  value="9">Izabal</option>
+                               <option  value="10">Jalapa</option>
+                               <option  value="11">Jutiapa</option>
+                               <option  value="12">Petén</option>
+                               <option  value="13">Quetzaltenango</option>
+                               <option  value="14">Quiché</option>
+                               <option  value="15">Retalhuleu</option>
+                               <option  value="16">Sacatepéquez</option>
+                               <option  value="17">San Marcos</option>
+                               <option  value="18">Santa Rosa</option>
+                               <option  value="19">Sololá</option>
+                               <option  value="20">Suchitepequez</option>
+                               <option  value="21">Totonicapán</option>
+                               <option  value="22">Zacapa</option>
+                           </select>
+                       </div>
+                       <div class="col-12">
+                           <button type="submit" class="btn btn-primary" id="agregarTienda">Agregar Tienda</button>
+                       </div>
+                   </form>
+               </section>
+       
+               <!-- Modificar o eliminar tienda -->
+               <section>
+                   <h2 class="h4 mb-3">Modificar</h2>
+                   <form id="modTienda" class="row g-3">
+                       <div class="col-md-6">
+                           <label for="SelectTiendaMod" class="form-label">Seleccionar Tienda:</label>
+                           <select id="SelectTiendaMod" class="form-select" required>
+                               <!-- Las opciones se agregarán dinámicamente -->
+                           </select>
+                       </div>
+                       <div class="col-md-6">
+                           <label for="nuevoNombreTienda" class="form-label">Nuevo nombre de la tienda:</label>
+                           <input type="text" id="nuevoNombreTienda" class="form-control">
+                       </div>
+                       <div class="col-md-6">
+                           <label for="tiendaSelectnuevoDept" class="form-label">Nuevo departamento:</label>
+                           <select id="tiendaSelectnuevoDept" class="form-select" required>
+                               <option selected></option>
+                               <option  value="1">Alta Verapaz</option>
+                               <option  value="2">Baja Verapaz</option>
+                               <option  value="3">Chimaltenango</option>
+                               <option  value="4">Chiquimula</option>
+                               <option  value="5">El Pprogreso</option>
+                               <option  value="6">Escuintla</option>
+                               <option  value="7">Guatemala</option>
+                               <option  value="8">Huehuetenango</option>
+                               <option  value="9">Izabal</option>
+                               <option  value="10">Jalapa</option>
+                               <option  value="11">Jutiapa</option>
+                               <option  value="12">Petén</option>
+                               <option  value="13">Quetzaltenango</option>
+                               <option  value="14">Quiché</option>
+                               <option  value="15">Retalhuleu</option>
+                               <option  value="16">Sacatepéquez</option>
+                               <option  value="17">San Marcos</option>
+                               <option  value="18">Santa Rosa</option>
+                               <option  value="19">Sololá</option>
+                               <option  value="20">Suchitepequez</option>
+                               <option  value="21">Totonicapán</option>
+                               <option  value="22">Zacapa</option>
+                           </select>
+                       </div>
+                       <div class="col-12">
+                           <button type="submit" class="btn btn-primary mb-4" id="btnModTienda">Modificar Tienda</button>
+                       </div>
+                   </form>
+               </section>
+       
+               <section>
+                   <h2 class="h4 mb-3">Dar de baja a una Tienda</h2>
+                   <form id="removeColocadoraForm" class="row g-3">
+                       <div class="col-md-6">
+                           <label for="tiendaSelectbaja" class="form-label">Lista de tiendas activas:</label>
+                           <select id="tiendaSelectbaja" class="form-select" required>
+                               <!-- Las opciones se agregarán dinámicamente -->
+                           </select>
+                       </div>
+                       <div class="col-md-6">
+                           <label for="fechaBaja" class="form-label">Fecha de baja:</label>
+                           <input type="date" id="fechaBajaTienda" class="form-control" required>
+                       </div>
+                       <div class="col-12">
+                           <label for="motivoBaja" class="form-label">Motivo de baja:</label>
+                           <textarea id="motivoBajaTienda" class="form-control" rows="3" required></textarea>
+                       </div>
+                       <div class="col-12">
+                           <button type="submit" class="btn btn-danger mb-4" id="btnbajaTienda">Dar de Baja</button>
+                       </div>
+                   </form>
+               </section>
+       
+               <!-- Tabla de tiendas -->
+               <section class="mb-5">
+                   <h2 class="h4 mb-3">Tiendas activas</h2>
+                   <div class="table-responsive">
+                       <table id="tiendaTableAct" class="table table-striped table-bordered">
+                           <thead class="table-dark">
+                               <tr>
+                                   <th>Nombre</th>
+                                   <th>Departamento</th>
+                               </tr>
+                               </thead>
+                               <tbody>
+                   <!-- Las filas se agregarán dinámicamente -->
+                           </tbody>
+                       </table>
+                   </div>
+               </section>
+       
+               <section class="mb-5">
+                   <h2 class="h4 mb-3">Tiendas inactivas</h2>
+                   <div class="table-responsive">
+                       <table id="tiendaTablebaja" class="table table-striped table-bordered">
+                           <thead class="table-dark">
+                               <tr>
+                                   <th>Nombre</th>
+                                   <th>Departamento</th>
+                                   <th>Fecha de baja</th>
+                                   <th>Motivo de baja</th>
+                               </tr>
+                           </thead>
+                           <tbody>
+                               <!-- Las filas se agregarán dinámicamente -->
+                           </tbody>
+                       </table>
+                   </div>
+               </section>
+       
+               </div>
+           </div>
+    
+        </div>
+        </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+    <script src="../script.js"></script>
+    <script src="scripts/menuTienda.js"></script>
+</body>
+</html>
